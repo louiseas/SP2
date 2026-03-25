@@ -12,11 +12,15 @@ public class Author {
     }
 
     public void addTitle(Title title){
-
+    titles.add(title);
     }
 
     public double calculateRoyalties(){
-        return 0;
+        double total = 0;
+        for(Title t: titles){
+            total += calculateRoyalties();
+        }
+        return Math.round(total*100.0)/100.0;
     }
 
     public String getName() {

@@ -8,7 +8,7 @@ public class EAudioBook extends NetTitle implements IAudioBook{
     }
 
     protected double calculatePoints(){
-        return 0;
+        return (durationInMinutes/2.0) * convertLiteratureType() * (getReach() * 5) + (getAvailability()* 0.5) + getUse();
     }
 
     public int getDurationInMinutes() {

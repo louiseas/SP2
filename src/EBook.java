@@ -10,11 +10,18 @@ public class EBook extends NetTitle{
     }
 
     private double calculatePages(){
-        return 0;
+        double pages = (characters / 1800.0)+20;
+        if(illustrated){
+            pages *=  1.10;
+        }
+        return pages;
+
     }
 
+    @Override
     protected double calculatePoints(){
-        return 0;
+        return calculatePages() * convertLiteratureType() * (getReach() * 5) + (getAvailability()* 0.5) + getUse();
+        //Beregnede sider × litteraturtype × ((udbredelse × 5) + (tilgængelighed × 0,5) + anvendelsesfaktor)
     }
 
     public int getCharacters() {

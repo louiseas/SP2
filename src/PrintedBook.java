@@ -8,9 +8,10 @@ public class PrintedBook extends PhysicalTitle{
     }
 
     @Override
-    protected double calculatePoints(){
-        return 0;
+    protected double calculatePoint() {
+        return pages*convertLiteratureType()*copies;
     }
+
 
     public int getPages() {
         return pages;

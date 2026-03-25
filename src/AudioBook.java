@@ -7,10 +7,6 @@ public class AudioBook extends PhysicalTitle implements IAudioBook{
         this.durationInMinutes = durationInMinutes;
     }
 
-    @Override
-    protected double calculatePoints(){
-        return 0;
-    }
 
     public int getDurationInMinutes() {
         return durationInMinutes;
@@ -19,4 +15,10 @@ public class AudioBook extends PhysicalTitle implements IAudioBook{
     public void setDurationInMinutes(int durationInMinutes) {
         this.durationInMinutes = durationInMinutes;
     }
+
+    @Override
+    protected double calculatePoint() {
+        return (getDurationInMinutes()*0.5) * convertLiteratureType() * copies;
+    }
+
 }

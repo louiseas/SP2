@@ -7,8 +7,4 @@ public abstract class PhysicalTitle extends Title{
         this.copies = copies;
     }
 
-    @Override
-    protected double calculatePoints() {
-        return 0;
-    }
 }
